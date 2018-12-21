@@ -4,7 +4,8 @@
   "description": "Egg Stream comment section",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "nodemon ./app/app.js",
+    "test": "jest --detectOpenHandles"
   },
   "repository": {
     "type": "git",
@@ -17,9 +18,11 @@
   },
   "homepage": "https://github.com/ByeEric/Purchase-Server#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "colors": "^1.3.3",
     "express": "^4.16.4",
+    "jest": "^23.6.0",
     "mongodb": "^3.1.10",
     "mongoose": "^5.4.0",
     "mysql": "^2.16.0",
