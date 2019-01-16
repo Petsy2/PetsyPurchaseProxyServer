@@ -844,6 +844,5 @@ const pets = [
 ];
 
 
-module.exports = {
-  pets
-}
+module.exports = pets;
+

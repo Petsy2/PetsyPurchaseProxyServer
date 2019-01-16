@@ -9,8 +9,9 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('/buy', (req, res) => {
-  const id = req.headers.pet_id
+app.get('/buy/:id', (req, res) => {
+  // const id = req.headers.pet_id
+  const id = req.params.id;
   console.log('\n -> Get Request on "/buy"\n -> pet_id: ', id);
   db.getPetByID(id, (err, data) => {
     // if err || data object is empty

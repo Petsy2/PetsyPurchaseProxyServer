@@ -1,7 +1,11 @@
 const mongodb = require('mongodb');
-const key = {key:'05110511as'};
-const url = `mongodb+srv://austinAdmin:${key.key}@austintestcluster-mdigu.mongodb.net/test?retryWrites=true`
-const client = new mongodb.MongoClient(url, {useNewUrlParser:true});
+
+const MongoClient = require('mongodb').MongoClient;
+const Server = require('mongodb').Server;
+// const key = {key:'05110511as'};
+// const url = `mongodb+srv://austinAdmin:${key.key}@austintestcluster-mdigu.mongodb.net/test?retryWrites=true`
+// const client = new mongodb.MongoClient(url, {useNewUrlParser:true});
+const client = new MongoClient(new Server("localhost", 27017), {native_parser: true});
 
 // Get Pet By ID
 const getPetByID = (id, callback = () => {console.log('no callback')}) => {
@@ -22,6 +26,7 @@ const getPetByID = (id, callback = () => {console.log('no callback')}) => {
       })
       .catch(err => callback(err));
     }
+    client.close();
   });
 };
 
